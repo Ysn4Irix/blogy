@@ -15,7 +15,7 @@
 <img width="100px" src="https://res.cloudinary.com/ydevcloud/image/upload/v1663804918/yassi/mxrjfvymnux04jhjwlh2.svg" align="center" alt="svelte" />
 </a>
 &nbsp; &nbsp; &nbsp;
-<a href="https://prisma.io">
+<a href="https://hygraph.com">
 <img width="250px" src="https://res.cloudinary.com/ydevcloud/image/upload/v1665931185/yassi/xujw1sjrp22vhph7wzkf.svg" align="center" alt="hygraph" />
 </a>
 </a>
