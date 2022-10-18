@@ -5,6 +5,7 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data
+	let first = 3
 </script>
 
 <svelte:head>
@@ -26,7 +27,7 @@
 		<main>
 			<h2>Latest thoughts</h2>
 			<ul>
-				{#each data.posts as post}
+				{#each data.posts.slice(0, first) as post}
 					<li
 						data-sveltekit-noscroll
 						in:fly={{ y: 50, duration: 500, delay: 500 }}
@@ -50,6 +51,13 @@
 					</li>
 				{/each}
 			</ul>
+			{#if first < data.posts.length}
+				<div class="btn">
+					<button on:click={() => (first = first + 3)} class="hire" type="button">
+						Load more
+					</button>
+				</div>
+			{/if}
 		</main>
 	</div>
 </div>
@@ -107,6 +115,30 @@
 		width: 40px;
 		border-radius: 100%;
 		height: 40px;
+	}
+	.btn {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.hire {
+		background: var(--darkenBlue);
+		padding: 1.2em 8em;
+		margin: 2em 0 3em;
+		text-align: center;
+		border: none;
+		cursor: pointer;
+		border-radius: 10px;
+		color: #fff;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+	.hire:hover {
+		box-shadow: rgba(91, 99, 211, 0.5) 0 2px 18px;
+		transition-duration: 0.1s;
+	}
+	.hire:active {
+		transform: scale(0.95);
 	}
 	@media only screen and (min-width: 768px) {
 		main li {
