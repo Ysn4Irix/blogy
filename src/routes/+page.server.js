@@ -10,7 +10,7 @@ export const load = async () => {
 
 	const { posts } = await hygraph.request(
 		`query Posts {
-            posts(orderBy: publishedAt_DESC) {
+            posts(orderBy: createdAt_DESC) {
               id
               slug
               title
